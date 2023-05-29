@@ -49,8 +49,8 @@ namespace AutoPujcovna_Probošt.Entities
             Phone = string.Empty;
             Email = string.Empty;
             RealPricePerDay = 0;
-            DateFrom = DateTime.MinValue;
-            DateTo = DateTime.MinValue;
+            DateFrom = DateTime.Now;
+            DateTo = DateTime.Now;
         }
         public Rental(int carID, string firstName, string lastName, string phone, string email, decimal realPricePerDay, DateTime dateFrom, DateTime dateTo)
         {

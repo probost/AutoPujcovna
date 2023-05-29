@@ -149,18 +149,21 @@
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(112, 22);
             addToolStripMenuItem.Text = "Přidat";
+            addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(112, 22);
             editToolStripMenuItem.Text = "Upravit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(112, 22);
             deleteToolStripMenuItem.Text = "Smazat";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // FormRentalList
             // 

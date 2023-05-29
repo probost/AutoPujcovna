@@ -13,13 +13,13 @@ namespace AutoPujcovna_Probošt.Validators
         {
             return !string.IsNullOrWhiteSpace(firstName)
                 && !(firstName.Length > 64)
-                && !firstName[0].Equals(firstName.ToUpper()[0]);
+                && char.IsUpper(firstName[0]);
         }
         public bool IsLastNameValid(string lastName)
         {
             return !string.IsNullOrWhiteSpace(lastName)
                 && !(lastName.Length > 64)
-                && !lastName[0].Equals(lastName.ToUpper()[0]);
+                && char.IsUpper(lastName[0]);
         }
         public bool IsPhoneValid(string phone) 
         {

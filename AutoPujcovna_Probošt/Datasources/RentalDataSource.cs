@@ -35,6 +35,28 @@ namespace AutoPujcovna_Probošt.Datasources
         {
             return Rentals;
         }
+        public void Add(Rental rental)
+        {
+            Context.Add(rental);
+            Context.SaveChanges(); //TODO: Cannot add or update a child row: a foreign key constraint fails  
+            Rentals.Add(rental);
+        }
+        public Rental GetByIndex(int index)
+        {
+            return Rentals[index];
+        }
+        public void Update(int index, Rental rental)
+        {
+            Context.Update(rental);
+            Context.SaveChanges();
+            Rentals[index] = rental;
+        }
+        public void Remove(int index)
+        {
+            Context.Remove(Rentals[index]);
+            Context.SaveChanges();
+            Rentals.RemoveAt(index);
+        }
     }
 
 }
