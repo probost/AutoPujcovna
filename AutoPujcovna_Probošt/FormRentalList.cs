@@ -48,7 +48,8 @@ namespace AutoPujcovna_Probošt
         {
             Rental rental = new Rental();
 
-            FormRentalAddEdit form = new FormRentalAddEdit(rental);
+
+            FormRentalAddEdit form = new FormRentalAddEdit(rental, Car);
             DialogResult result = form.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -64,7 +65,7 @@ namespace AutoPujcovna_Probošt
             int index = dataGridViewRentals.CurrentCell.RowIndex;
             Rental Rental = RentalDataSource.GetByIndex(index);
 
-            FormRentalAddEdit form = new FormRentalAddEdit(Rental);
+            FormRentalAddEdit form = new FormRentalAddEdit(Rental, Car);
             DialogResult result = form.ShowDialog();
 
             if (result == DialogResult.OK)

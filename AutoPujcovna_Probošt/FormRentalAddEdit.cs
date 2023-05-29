@@ -1,4 +1,5 @@
-﻿using AutoPujcovna_Probošt.Entities;
+﻿using AutoPujcovna_Probošt.Datasources;
+using AutoPujcovna_Probošt.Entities;
 using AutoPujcovna_Probošt.Validators;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace AutoPujcovna_Probošt
     public partial class FormRentalAddEdit : Form
     {
         public Rental Rental { get; set; }
+        public Car Car { get; set; }
         public RentalValidator Validator { get; set; }
-        public FormRentalAddEdit(Rental rental)
+        public FormRentalAddEdit(Rental rental, Car car)
         {
             Validator = new RentalValidator();
             Rental = rental;
+            Car = car;
             InitializeComponent();
             SetComponentValues();
         }
@@ -37,6 +40,7 @@ namespace AutoPujcovna_Probošt
         {
             if (ValidateChildren()) //uloží pouze v případě, že jsou všechny prvky ve formuláři validní
             {
+                Rental.CarID = Car.ID;
                 Rental.FirstName = textBoxFirstName.Text;
                 Rental.LastName = textBoxLastName.Text;
                 Rental.Phone = textBoxPhone.Text;
