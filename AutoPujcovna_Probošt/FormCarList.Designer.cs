@@ -44,6 +44,7 @@
             // 
             // dataGridViewCar
             // 
+            dataGridViewCar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCar.Dock = DockStyle.Fill;
             dataGridViewCar.Location = new Point(0, 24);
@@ -75,28 +76,28 @@
             // addToolStripMenuItem
             // 
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(180, 22);
+            addToolStripMenuItem.Size = new Size(125, 22);
             addToolStripMenuItem.Text = "Přidat";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(180, 22);
+            editToolStripMenuItem.Size = new Size(125, 22);
             editToolStripMenuItem.Text = "Upravit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Size = new Size(125, 22);
             deleteToolStripMenuItem.Text = "Smazat";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // pronájmyToolStripMenuItem
             // 
             pronájmyToolStripMenuItem.Name = "pronájmyToolStripMenuItem";
-            pronájmyToolStripMenuItem.Size = new Size(180, 22);
+            pronájmyToolStripMenuItem.Size = new Size(125, 22);
             pronájmyToolStripMenuItem.Text = "Pronájmy";
             pronájmyToolStripMenuItem.Click += rentalsToolStripMenuItem_Click;
             // 

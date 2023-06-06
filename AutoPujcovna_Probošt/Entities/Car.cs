@@ -31,6 +31,31 @@ namespace AutoPujcovna_Probošt.Entities
 
         public virtual List<Rental> rentals { get; set; }
 
+        public int TotalRentalDays
+        {
+            get { return CalculateTotalRentalDays(); }
+        }
+        public decimal TotalRentalPrice
+        {
+            get { return CalculateTotalRentalPrice(); }
+        }
+        [DisplayName("Pronajato")]
+        public string IsRentedNow
+        {
+            get 
+            { 
+                if(DetermineIsRentedNow())
+                {
+                    return "ano";
+                }
+                else
+                {
+                    return "ne";
+                }
+            }
+        }
+
+
         public Car()
         {
             rentals = new List<Rental>();

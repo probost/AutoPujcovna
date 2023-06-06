@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace AutoPujcovna_Probošt.Entities
         [Key]
         [Column("id")]
         public int ID {  get; set; }
+        [Browsable(false)]
         [Column("car_id")]
-
         public int CarID { get; set; }
         [Column("first_name")]
 
@@ -39,6 +40,15 @@ namespace AutoPujcovna_Probošt.Entities
         [Column("date_to")]
 
         public DateTime DateTo { get; set; }
+        public int NumberOfDays
+        {
+           get { return CalculateNumberOfDays(); }
+        }
+        public decimal RentalPrice
+        {
+            get { return CalculateRentalPrice(); }
+        }
+
 
         public Rental()
         {

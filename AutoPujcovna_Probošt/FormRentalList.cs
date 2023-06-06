@@ -15,7 +15,7 @@ namespace AutoPujcovna_Probošt
     public partial class FormRentalList : Form
     {
         public Car Car { get; set; }
-        public Rental Rental { get; set; }
+        //public Rental Rental { get; set; }
 
         public RentalDataSource RentalDataSource { get; set; }
 
@@ -28,6 +28,7 @@ namespace AutoPujcovna_Probošt
             SetComponentValues();
 
             dataGridViewRentals.DataSource = RentalDataSource;
+            //dataGridViewRentals.Columns.Add("NumberOfDays", "Number of days");
         }
         private void FormRentalList_Load(object sender, EventArgs e)
         {

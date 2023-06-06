@@ -120,6 +120,7 @@
             // 
             // dataGridViewRentals
             // 
+            dataGridViewRentals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewRentals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewRentals.Dock = DockStyle.Fill;
             dataGridViewRentals.Location = new Point(3, 53);
