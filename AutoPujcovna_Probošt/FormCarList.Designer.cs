@@ -36,7 +36,7 @@
             addToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
-            pronájmyToolStripMenuItem = new ToolStripMenuItem();
+            rentalsToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)carDataSourceBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             // autoToolStripMenuItem
             // 
-            autoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, pronájmyToolStripMenuItem });
+            autoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, rentalsToolStripMenuItem });
             autoToolStripMenuItem.Name = "autoToolStripMenuItem";
             autoToolStripMenuItem.Size = new Size(45, 20);
             autoToolStripMenuItem.Text = "Auto";
@@ -76,30 +76,30 @@
             // addToolStripMenuItem
             // 
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(125, 22);
+            addToolStripMenuItem.Size = new Size(180, 22);
             addToolStripMenuItem.Text = "Přidat";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(125, 22);
+            editToolStripMenuItem.Size = new Size(180, 22);
             editToolStripMenuItem.Text = "Upravit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(125, 22);
+            deleteToolStripMenuItem.Size = new Size(180, 22);
             deleteToolStripMenuItem.Text = "Smazat";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
-            // pronájmyToolStripMenuItem
+            // rentalsToolStripMenuItem
             // 
-            pronájmyToolStripMenuItem.Name = "pronájmyToolStripMenuItem";
-            pronájmyToolStripMenuItem.Size = new Size(125, 22);
-            pronájmyToolStripMenuItem.Text = "Pronájmy";
-            pronájmyToolStripMenuItem.Click += rentalsToolStripMenuItem_Click;
+            rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
+            rentalsToolStripMenuItem.Size = new Size(180, 22);
+            rentalsToolStripMenuItem.Text = "Pronájmy";
+            rentalsToolStripMenuItem.Click += rentalsToolStripMenuItem_Click;
             // 
             // FormCarList
             // 
@@ -129,6 +129,6 @@
         private ToolStripMenuItem addToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
-        private ToolStripMenuItem pronájmyToolStripMenuItem;
+        private ToolStripMenuItem rentalsToolStripMenuItem;
     }
 }
