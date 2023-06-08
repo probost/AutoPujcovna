@@ -41,6 +41,10 @@ namespace AutoPujcovna_Probošt.Datasources
         {
             return Cars;
         }
+        public List<Car> GetAll()
+        {
+            return Cars.ToList();
+        }
         public void Add(Car car)
         {
             Context.Add(car);

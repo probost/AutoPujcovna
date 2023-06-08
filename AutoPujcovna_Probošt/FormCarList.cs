@@ -1,16 +1,19 @@
 using AutoPujcovna_Probošt.Datasources;
 using AutoPujcovna_Probošt.Entities;
+using AutoPujcovna_Probošt.Exporting;
 
 namespace AutoPujcovna_Probošt
 {
     public partial class FormCarList : Form
     {
         public CarDataSource CarDataSource;
+        private CarCSVWriter CarCSV;
         public FormCarList()
         {
             CarDataSource = new CarDataSource();
             InitializeComponent();
             dataGridViewCar.DataSource = CarDataSource;
+            CarCSV = new CarCSVWriter();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,6 +83,21 @@ namespace AutoPujcovna_Probošt
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void exportCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = saveFileDialogCSV.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //cesta = od savefiledialog
+                //list studentů
+                List<Car> cars = CarDataSource.GetAll();
+                string path = saveFileDialogCSV.FileName;
+                CarCSV.WriteCSV(path, cars);
+                
+                //provedu export do CSV
+            }
         }
     }
 }
