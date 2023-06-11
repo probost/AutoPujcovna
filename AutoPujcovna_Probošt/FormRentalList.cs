@@ -1,5 +1,6 @@
 ﻿using AutoPujcovna_Probošt.Datasources;
 using AutoPujcovna_Probošt.Entities;
+using AutoPujcovna_Probošt.Exporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +16,14 @@ namespace AutoPujcovna_Probošt
     public partial class FormRentalList : Form
     {
         public Car Car { get; set; }
-        //public Rental Rental { get; set; }
-
+        public RentalCSVWriter RentalCSV { get; set; }
         public RentalDataSource RentalDataSource { get; set; }
 
         public FormRentalList(Car car)
         {
             Car = car;
             RentalDataSource = new RentalDataSource();
+            RentalCSV = new RentalCSVWriter();
 
             InitializeComponent();
             SetComponentValues();
@@ -93,6 +94,17 @@ namespace AutoPujcovna_Probošt
             if (result == DialogResult.Yes)
             {
                 RentalDataSource.Remove(index);
+            }
+        }
+
+        private void exportCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = saveFileDialogCSV.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                List<Rental> rentals = RentalDataSource.GetAll();
+                string path = saveFileDialogCSV.FileName;
+                RentalCSV.WriteCSV(path, rentals);
             }
         }
     }

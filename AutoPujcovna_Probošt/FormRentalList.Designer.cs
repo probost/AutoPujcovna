@@ -40,6 +40,9 @@
             addToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
+            souborToolStripMenuItem = new ToolStripMenuItem();
+            exportCSVToolStripMenuItem = new ToolStripMenuItem();
+            saveFileDialogCSV = new SaveFileDialog();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRentals).BeginInit();
@@ -131,7 +134,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { rentalToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { rentalToolStripMenuItem, souborToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(984, 24);
@@ -165,6 +168,27 @@
             deleteToolStripMenuItem.Size = new Size(112, 22);
             deleteToolStripMenuItem.Text = "Smazat";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
+            // 
+            // souborToolStripMenuItem
+            // 
+            souborToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportCSVToolStripMenuItem });
+            souborToolStripMenuItem.Name = "souborToolStripMenuItem";
+            souborToolStripMenuItem.Size = new Size(57, 20);
+            souborToolStripMenuItem.Text = "Soubor";
+            // 
+            // exportCSVToolStripMenuItem
+            // 
+            exportCSVToolStripMenuItem.Name = "exportCSVToolStripMenuItem";
+            exportCSVToolStripMenuItem.Size = new Size(180, 22);
+            exportCSVToolStripMenuItem.Text = "Export CSV";
+            exportCSVToolStripMenuItem.Click += exportCSVToolStripMenuItem_Click;
+            // 
+            // saveFileDialogCSV
+            // 
+            saveFileDialogCSV.DefaultExt = "csv";
+            saveFileDialogCSV.FileName = "rental-export";
+            saveFileDialogCSV.Filter = "Comma-separated list (.csv)|*.csv";
+            saveFileDialogCSV.Title = "Uložit CSV";
             // 
             // FormRentalList
             // 
@@ -202,5 +226,8 @@
         private ToolStripMenuItem addToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripMenuItem souborToolStripMenuItem;
+        private ToolStripMenuItem exportCSVToolStripMenuItem;
+        private SaveFileDialog saveFileDialogCSV;
     }
 }

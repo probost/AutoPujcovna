@@ -35,6 +35,10 @@ namespace AutoPujcovna_Probošt.Datasources
         {
             return Rentals;
         }
+        public List<Rental> GetAll()
+        {
+            return Rentals.ToList();
+        }
         public void Add(Rental rental)
         {
             Context.Add(rental);

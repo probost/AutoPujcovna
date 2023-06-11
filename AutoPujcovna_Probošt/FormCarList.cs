@@ -90,13 +90,10 @@ namespace AutoPujcovna_Probošt
             DialogResult result = saveFileDialogCSV.ShowDialog();
             if (result == DialogResult.OK)
             {
-                //cesta = od savefiledialog
-                //list studentů
+               
                 List<Car> cars = CarDataSource.GetAll();
                 string path = saveFileDialogCSV.FileName;
                 CarCSV.WriteCSV(path, cars);
-                
-                //provedu export do CSV
             }
         }
     }

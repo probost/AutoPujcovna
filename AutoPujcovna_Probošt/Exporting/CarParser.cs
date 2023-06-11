@@ -10,18 +10,18 @@ namespace AutoPujcovna_Probošt.Exporting
 {
     public class CarParser
     {
-        public Car ParseCSVString(string text)
-        {
-            string[] parts = text.Split(';');
+        //public Car ParseCSVString(string text)
+        //{
+        //    string[] parts = text.Split(';');
 
-            int id = Convert.ToInt32(parts[0]);
-            string brand = parts[1];
-            string model = parts[2];
-            int year = Convert.ToInt32(parts[3]);
-            decimal nominalPricePerDay = Convert.ToInt32(parts[4]);
+        //    int id = Convert.ToInt32(parts[0]);
+        //    string brand = parts[1];
+        //    string model = parts[2];
+        //    int year = Convert.ToInt32(parts[3]);
+        //    decimal nominalPricePerDay = Convert.ToInt32(parts[4]);
 
-            return new Car(brand,model,year,nominalPricePerDay);
-        }
+        //    return new Car(brand,model,year,nominalPricePerDay);
+        //}
 
         public string AssembleCSVString(Car car)
         {
