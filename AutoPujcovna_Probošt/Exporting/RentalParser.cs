@@ -21,9 +21,6 @@ namespace AutoPujcovna_Probošt.Exporting
             DateTime dateFrom = rental.DateFrom;
             DateTime dateTo = rental.DateTo;
 
-
-
-
             return $"{id};{carId};{firstname};{lastname};{phone};{email};{realPricePerDay};{dateFrom};{dateTo}";
         }
     }

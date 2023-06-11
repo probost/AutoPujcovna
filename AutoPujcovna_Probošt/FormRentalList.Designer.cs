@@ -42,7 +42,9 @@
             deleteToolStripMenuItem = new ToolStripMenuItem();
             souborToolStripMenuItem = new ToolStripMenuItem();
             exportCSVToolStripMenuItem = new ToolStripMenuItem();
+            exportHTMLToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialogCSV = new SaveFileDialog();
+            saveFileDialogHTML = new SaveFileDialog();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRentals).BeginInit();
@@ -171,7 +173,7 @@
             // 
             // souborToolStripMenuItem
             // 
-            souborToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportCSVToolStripMenuItem });
+            souborToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportCSVToolStripMenuItem, exportHTMLToolStripMenuItem });
             souborToolStripMenuItem.Name = "souborToolStripMenuItem";
             souborToolStripMenuItem.Size = new Size(57, 20);
             souborToolStripMenuItem.Text = "Soubor";
@@ -183,12 +185,25 @@
             exportCSVToolStripMenuItem.Text = "Export CSV";
             exportCSVToolStripMenuItem.Click += exportCSVToolStripMenuItem_Click;
             // 
+            // exportHTMLToolStripMenuItem
+            // 
+            exportHTMLToolStripMenuItem.Name = "exportHTMLToolStripMenuItem";
+            exportHTMLToolStripMenuItem.Size = new Size(180, 22);
+            exportHTMLToolStripMenuItem.Text = "Export HTML";
+            exportHTMLToolStripMenuItem.Click += exportHTMLToolStripMenuItem_Click;
+            // 
             // saveFileDialogCSV
             // 
             saveFileDialogCSV.DefaultExt = "csv";
-            saveFileDialogCSV.FileName = "rental-export";
+            saveFileDialogCSV.FileName = "export-rentals";
             saveFileDialogCSV.Filter = "Comma-separated list (.csv)|*.csv";
             saveFileDialogCSV.Title = "Uložit CSV";
+            // 
+            // saveFileDialogHTML
+            // 
+            saveFileDialogHTML.DefaultExt = "html";
+            saveFileDialogHTML.FileName = "export-car";
+            saveFileDialogHTML.Filter = "hypertext markup language (*.html)|*.html";
             // 
             // FormRentalList
             // 
@@ -229,5 +244,7 @@
         private ToolStripMenuItem souborToolStripMenuItem;
         private ToolStripMenuItem exportCSVToolStripMenuItem;
         private SaveFileDialog saveFileDialogCSV;
+        private ToolStripMenuItem exportHTMLToolStripMenuItem;
+        private SaveFileDialog saveFileDialogHTML;
     }
 }

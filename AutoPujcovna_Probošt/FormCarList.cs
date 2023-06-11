@@ -7,13 +7,13 @@ namespace AutoPujcovna_Probošt
     public partial class FormCarList : Form
     {
         public CarDataSource CarDataSource;
-        private CarCSVWriter CarCSV;
+        private CarCSVWriter CarsCSV;
         public FormCarList()
         {
             CarDataSource = new CarDataSource();
             InitializeComponent();
             dataGridViewCar.DataSource = CarDataSource;
-            CarCSV = new CarCSVWriter();
+            CarsCSV = new CarCSVWriter();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -90,10 +90,10 @@ namespace AutoPujcovna_Probošt
             DialogResult result = saveFileDialogCSV.ShowDialog();
             if (result == DialogResult.OK)
             {
-               
+
                 List<Car> cars = CarDataSource.GetAll();
                 string path = saveFileDialogCSV.FileName;
-                CarCSV.WriteCSV(path, cars);
+                CarsCSV.WriteCSV(path, cars);
             }
         }
     }

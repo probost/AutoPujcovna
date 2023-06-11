@@ -16,14 +16,17 @@ namespace AutoPujcovna_Probošt
     public partial class FormRentalList : Form
     {
         public Car Car { get; set; }
-        public RentalCSVWriter RentalCSV { get; set; }
+        public RentalCSVWriter RentalsCSV { get; set; }
+        public CarHTMLGenerator CarHTML { get; set; }
         public RentalDataSource RentalDataSource { get; set; }
 
         public FormRentalList(Car car)
         {
+
             Car = car;
             RentalDataSource = new RentalDataSource();
-            RentalCSV = new RentalCSVWriter();
+            RentalsCSV = new RentalCSVWriter();
+            CarHTML = new CarHTMLGenerator();
 
             InitializeComponent();
             SetComponentValues();
@@ -104,7 +107,19 @@ namespace AutoPujcovna_Probošt
             {
                 List<Rental> rentals = RentalDataSource.GetAll();
                 string path = saveFileDialogCSV.FileName;
-                RentalCSV.WriteCSV(path, rentals);
+                RentalsCSV.WriteCSV(path, rentals);
+            }
+        }
+
+        private void exportHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = saveFileDialogHTML.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string path = saveFileDialogHTML.FileName;
+                string templateFilePath = @".\template.html";
+                //TODO: FileOpenDialog box pro vlastní template
+                CarHTML.GenerateHTMLToFile(path, Car, templateFilePath);
             }
         }
     }

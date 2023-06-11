@@ -116,6 +116,7 @@
             // 
             // saveFileDialogCSV
             // 
+            saveFileDialogCSV.DefaultExt = "csv";
             saveFileDialogCSV.FileName = "export_cars";
             saveFileDialogCSV.Filter = "Comma-separated values (*.csv)|*.csv";
             // 

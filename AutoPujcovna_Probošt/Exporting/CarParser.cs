@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace AutoPujcovna_Probošt.Exporting
 {
@@ -33,14 +34,33 @@ namespace AutoPujcovna_Probošt.Exporting
 
             return $"{id};{brand};{model};{year};{nominalPricePerDay}";
         }
-        //public string AssembleHTMLTableRow(Car car)
-        //{
-        //    string classname = student.ClassName;
-        //    string lastname = student.LastName;
-        //    string firstname = student.FirstName;
-        //    string average = student.AverageGradeText;
+        public string AssembleHTMLTableRow(Car car)
+        {
+            
+            string brand = car.Brand;
+            string model = car.Model;
+            int year = car.Year;
+            decimal nominalPricePerDay = car.NominalpricePerDay;
 
-        //    return $"<tr><td>{classname}</td><td>{lastname}</td><td>{firstname}</td><td>{average}</td></tr>";
-        //}
+            int totalRentalDays = car.TotalRentalDays;
+            decimal totalRentalPrice = car.TotalRentalPrice;
+
+            return $"<tr><td>{brand}</td><td>{model}</td><td>{year}</td><td>{nominalPricePerDay}</td>" +
+                   $"<td>{totalRentalDays}</td><td>{totalRentalPrice}</td></tr>";
+        }
+        public string AssembleHTMLTableRow(Rental rental)
+        {
+            string firstname = rental.FirstName;
+            string lastname = rental.LastName;
+            string phone = rental.Phone;
+            string email = rental.Email;
+            decimal realPricePerDay = rental.RealPricePerDay;
+            decimal rentalPrice = rental.RentalPrice;
+
+            DateTime dateFrom = rental.DateFrom;
+            DateTime dateTo = rental.DateTo;
+
+            return $"<tr><td>{firstname}</td><td>{lastname}</td><td>{phone}</td><td>{email}</td><td>{realPricePerDay}</td><td>{rentalPrice}</td><td>{dateFrom}</td><td>{dateTo}</td></tr>";
+        }
     }
 }
