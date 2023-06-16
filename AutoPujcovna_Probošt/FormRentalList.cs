@@ -118,9 +118,23 @@ namespace AutoPujcovna_Probošt
             {
                 string path = saveFileDialogHTML.FileName;
                 string templateFilePath = @".\template.html";
-                //TODO: FileOpenDialog box pro vlastní template
+                //TODO: FileOpenDialog box pro využití vlastního html template 
                 CarHTML.GenerateHTMLToFile(path, Car, templateFilePath);
             }
+        }
+
+        private void graphTopThreeRentalsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewRentals.CurrentCell == null || Car.rentals.Count < 3)
+                return;
+
+
+            List<Rental> TopThreeRentals = Car.rentals.OrderByDescending(r => r.RentalPrice).Take(3).ToList();
+
+            FormGraphRentalList form = new FormGraphRentalList(TopThreeRentals);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

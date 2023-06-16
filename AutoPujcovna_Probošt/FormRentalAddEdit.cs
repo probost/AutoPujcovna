@@ -106,7 +106,7 @@ namespace AutoPujcovna_Probošt
             }
             else
             {
-                errorProvider.SetError(textBoxEmail, "Zadané jméno není platné");
+                errorProvider.SetError(textBoxEmail, "Zadaný email není platný");
                 e.Cancel = true;
             }
         }
@@ -119,33 +119,34 @@ namespace AutoPujcovna_Probošt
             }
             else
             {
-                errorProvider.SetError(numericUpDownRealPricePerDay, "Zadané jméno není platné");
+                errorProvider.SetError(numericUpDownRealPricePerDay, "Zadaná skutečná cena za den není platná");
                 e.Cancel = true;
             }
         }
         private void dateTimePickerDateFrom_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            bool valid = Validator.IsDateFromValid(dateTimePickerDateFrom.Value, dateTimePickerDateTo.Value);
+            
+            bool valid = Validator.IsDateFromValid(dateTimePickerDateFrom.Value, dateTimePickerDateTo.Value, Car.rentals);
             if (valid)
             {
                 errorProvider.SetError(dateTimePickerDateFrom, null);
             }
             else
             {
-                errorProvider.SetError(dateTimePickerDateFrom, "Zadané jméno není platné");
+                errorProvider.SetError(dateTimePickerDateFrom, "Zadané datum od není platné nebo je v konfliktu");
                 e.Cancel = true;
             }
         }
         private void dateTimePickerDateTo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            bool valid = Validator.IsDateToValid(dateTimePickerDateFrom.Value, dateTimePickerDateTo.Value);
+            bool valid = Validator.IsDateToValid(dateTimePickerDateFrom.Value, dateTimePickerDateTo.Value, Car.rentals);
             if (valid)
             {
                 errorProvider.SetError(dateTimePickerDateTo, null);
             }
             else
             {
-                errorProvider.SetError(dateTimePickerDateTo, "Zadané jméno není platné");
+                errorProvider.SetError(dateTimePickerDateTo, "Zadané datum do není platné nebo je v konfliktu");
                 e.Cancel = true;
             }
         }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             textBoxNominalPricePerDay = new TextBox();
@@ -43,6 +45,8 @@
             souborToolStripMenuItem = new ToolStripMenuItem();
             exportCSVToolStripMenuItem = new ToolStripMenuItem();
             exportHTMLToolStripMenuItem = new ToolStripMenuItem();
+            graphToolStripMenuItem = new ToolStripMenuItem();
+            top3RentalsToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialogCSV = new SaveFileDialog();
             saveFileDialogHTML = new SaveFileDialog();
             tableLayoutPanel1.SuspendLayout();
@@ -126,7 +130,23 @@
             // dataGridViewRentals
             // 
             dataGridViewRentals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewRentals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewRentals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewRentals.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewRentals.Dock = DockStyle.Fill;
             dataGridViewRentals.Location = new Point(3, 53);
             dataGridViewRentals.Name = "dataGridViewRentals";
@@ -136,7 +156,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { rentalToolStripMenuItem, souborToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { rentalToolStripMenuItem, souborToolStripMenuItem, graphToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(984, 24);
@@ -181,16 +201,30 @@
             // exportCSVToolStripMenuItem
             // 
             exportCSVToolStripMenuItem.Name = "exportCSVToolStripMenuItem";
-            exportCSVToolStripMenuItem.Size = new Size(180, 22);
+            exportCSVToolStripMenuItem.Size = new Size(143, 22);
             exportCSVToolStripMenuItem.Text = "Export CSV";
             exportCSVToolStripMenuItem.Click += exportCSVToolStripMenuItem_Click;
             // 
             // exportHTMLToolStripMenuItem
             // 
             exportHTMLToolStripMenuItem.Name = "exportHTMLToolStripMenuItem";
-            exportHTMLToolStripMenuItem.Size = new Size(180, 22);
+            exportHTMLToolStripMenuItem.Size = new Size(143, 22);
             exportHTMLToolStripMenuItem.Text = "Export HTML";
             exportHTMLToolStripMenuItem.Click += exportHTMLToolStripMenuItem_Click;
+            // 
+            // graphToolStripMenuItem
+            // 
+            graphToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { top3RentalsToolStripMenuItem });
+            graphToolStripMenuItem.Name = "graphToolStripMenuItem";
+            graphToolStripMenuItem.Size = new Size(41, 20);
+            graphToolStripMenuItem.Text = "Graf";
+            // 
+            // top3RentalsToolStripMenuItem
+            // 
+            top3RentalsToolStripMenuItem.Name = "top3RentalsToolStripMenuItem";
+            top3RentalsToolStripMenuItem.Size = new Size(180, 22);
+            top3RentalsToolStripMenuItem.Text = "Top 3 pronájmy";
+            top3RentalsToolStripMenuItem.Click += graphTopThreeRentalsToolStripMenuItem_Click;
             // 
             // saveFileDialogCSV
             // 
@@ -246,5 +280,7 @@
         private SaveFileDialog saveFileDialogCSV;
         private ToolStripMenuItem exportHTMLToolStripMenuItem;
         private SaveFileDialog saveFileDialogHTML;
+        private ToolStripMenuItem graphToolStripMenuItem;
+        private ToolStripMenuItem top3RentalsToolStripMenuItem;
     }
 }

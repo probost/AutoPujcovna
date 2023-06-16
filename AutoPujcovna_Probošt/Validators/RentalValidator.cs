@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoPujcovna_Probošt.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,12 +37,29 @@ namespace AutoPujcovna_Probošt.Validators
             return !(realPricePerDay < 0)
                 && !(realPricePerDay > 100000);
         }
-        public bool IsDateFromValid(DateTime dateFrom, DateTime dateTo)
+        public bool IsDateFromValid(DateTime dateFrom, DateTime dateTo, List<Rental> rentals)
         {
+
+            foreach (var rental in rentals)
+            {
+                if (dateFrom <= rental.DateTo && dateTo >= rental.DateFrom)//kolize datumů
+                {
+                    return false;
+                }
+            }
             return dateFrom < dateTo;
+
+
         }
-        public bool IsDateToValid(DateTime dateFrom, DateTime dateTo)
+        public bool IsDateToValid(DateTime dateFrom, DateTime dateTo, List<Rental> rentals)
         {
+            foreach (var rental in rentals)
+            {
+                if (dateFrom <= rental.DateTo && dateTo >= rental.DateFrom)//kolize datumů
+                {
+                    return false;
+                }
+            }
             return dateFrom < dateTo;
         }
     }
