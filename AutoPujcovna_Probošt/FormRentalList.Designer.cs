@@ -222,7 +222,7 @@
             // top3RentalsToolStripMenuItem
             // 
             top3RentalsToolStripMenuItem.Name = "top3RentalsToolStripMenuItem";
-            top3RentalsToolStripMenuItem.Size = new Size(180, 22);
+            top3RentalsToolStripMenuItem.Size = new Size(156, 22);
             top3RentalsToolStripMenuItem.Text = "Top 3 pronájmy";
             top3RentalsToolStripMenuItem.Click += graphTopThreeRentalsToolStripMenuItem_Click;
             // 

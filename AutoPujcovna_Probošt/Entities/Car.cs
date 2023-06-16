@@ -16,13 +16,10 @@ namespace AutoPujcovna_Probošt.Entities
         [Column("id")]
         public int ID { get; set; }
         [Column("brand")]
-
         public string Brand { get; set; }
         [Column("model")]
-
         public string Model { get; set; }
         [Column("year")]
-
         public int Year { get; set; }
         [Column("nominal_price_per_day")]
 
@@ -30,6 +27,7 @@ namespace AutoPujcovna_Probošt.Entities
         [Browsable(false)]
 
         public virtual List<Rental> rentals { get; set; }
+
 
         public int TotalRentalDays
         {
